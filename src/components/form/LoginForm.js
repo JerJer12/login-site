@@ -1,10 +1,17 @@
 import { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link} from "react-router-dom";
 
 function LoginForm(props){
 
     const emailRef= useRef();
     const passwordRef= useRef();
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const [properEmail, setProperEmail] = useState(false);
+
+    const navigate = useNavigate();
     //var properEmail = false;
 
     function submitHandler(event){
@@ -17,20 +24,12 @@ function LoginForm(props){
             email: enteredEmail,
             password: enteredPassword
     };
-    props.onLogin(loginData);
+    navigate('/info',{
+    state: loginData});
+
+    //props.onLogin(loginData);
     }
 
-
-    
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-    const [properEmail, setProperEmail] = useState(false);
-
-    const history = useNavigate();
-
-   
-    
 
     const eReg=  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const eRegpass= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[?!*/@$%&]).{5,}'$/;

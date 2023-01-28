@@ -25,6 +25,7 @@ function Login(props){
 
     const history = useNavigate();
 
+/*
     function onLoginHandler(loginData){
         fetch(
             'https://fontendtest-40332-default-rtdb.europe-west1.firebasedatabase.app/logininfo.json',
@@ -38,7 +39,7 @@ function Login(props){
         ).then(()=>{
             history('/info');
         });
-    }
+    }*/
     
     return (
         <div>
@@ -49,7 +50,7 @@ function Login(props){
         <div id="signInDiv">
        
         </div>
-        <LoginForm onLogin={onLoginHandler}/>
+        <LoginForm /*onLogin={onLoginHandler}*//>
         
         </div>
 
