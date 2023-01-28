@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import LoginGoogle from "../components/LoginGoogle";
 import { gapi } from "gapi-script";
 import GoogleLogin from "@leecheuk/react-google-login";
@@ -22,6 +23,22 @@ function Login(props){
         gapi.load('client:auth2', start);
     });
 
+    const history = useNavigate();
+
+    function onLoginHandler(loginData){
+        fetch(
+            'https://fontendtest-40332-default-rtdb.europe-west1.firebasedatabase.app/logininfo.json',
+            {
+                method: 'POST',
+                body: JSON.stringify(loginData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        ).then(()=>{
+            history('/info');
+        });
+    }
     
     return (
         <div>
@@ -32,7 +49,7 @@ function Login(props){
         <div id="signInDiv">
        
         </div>
-        <LoginForm />
+        <LoginForm onLogin={onLoginHandler}/>
         
         </div>
 
