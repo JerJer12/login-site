@@ -4,12 +4,11 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function Info(props){
+    /*
     const [isLoading, setLoading] = useState(false);
     const [loadInfo, setLoadInfo] = useState([]);
+  */
     const location = useLocation();
-
-    //const state = props.location;
-    //console.log(state);
 
     return(
         <div>
