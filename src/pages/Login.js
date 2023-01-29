@@ -57,6 +57,10 @@ function Login(props){
                                 or Sign in with email
                             </div>
                         <LoginForm /*onLogin={onLoginHandler}*//>
+                        <div>
+                            <b>Not registered yet? <a href="/">Create an account</a></b>
+                        </div>
+                        <p className={classes.foot} >2022 Syncee. All rights reserved</p>
              </div>
              <div className={classes.right}>
                 <img className={classes.wall}/* src={wallpaper} alt="wallpaper"*/ />

@@ -15,6 +15,41 @@
    
 }
 
-.btn {
-    background-color: blue;
+.btn, .btn:disabled {
+    background-color: cornflowerblue;
+    width: 100%;
+    border-radius: 1rem;
+    border: solid 2px lightgrey;
+    padding: 10px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    color:white;
+}
+
+.error {
+    margin: 0 0 1em 0;
+    color: red;
+}
+
+
+.helper{
+    display: flex;
+    justify-content:space-between;
+    
+}
+
+.btn:enabled{
+    background-color: rgb(84, 21, 230);
+}
+
+.btn[disabled]:hover{
+    background-color: cornflowerblue;
+    cursor: not-allowed;
+}
+.btn:hover{
+    background-color: rgb(66, 6, 204);
+}
+
+.checklabel{
+    margin-left: 5px;
 }

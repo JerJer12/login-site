@@ -41,12 +41,10 @@ function LoginForm(props){
         setEmail(value);
         if(eReg.test(value)){
             setError("");
-            //properEmail = true;
             setProperEmail(true);
         }
         else{
             setError("Invalid email format");
-            //properEmail = false;
             setProperEmail(false);
         }
     }
@@ -96,9 +94,17 @@ function LoginForm(props){
                  value={password}
                  onChange= {onHandleChangePass}/* {e=>setPassword(e.target.value)}*/
                  placeholder="Min. 5 character" ></input>
-                 <p>{error}</p>
+                 <p className={classes.error}> {error} </p>
             </div>
-            <div>Placeholder for "remember me" and "forgot password"</div>
+            <div className={classes.helper}>
+                <div>
+                <input type="checkbox" checked="checked" id="checkbox"/>
+                <label htmlFor="checkbox" className={classes.checklabel}>
+                <b>Remember me</b>
+                </label>
+                </div>
+                <a href="/"><b>Forget password?</b></a>
+                </div>
             <div>
             <input className={classes.btn} type="submit" value="Login" disabled={!properEmail} />
                 
