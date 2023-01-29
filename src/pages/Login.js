@@ -1,9 +1,14 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginGoogle from "../components/LoginGoogle";
+import LoginGoogle from "../components/google/LoginGoogle";
 import { gapi } from "gapi-script";
 import GoogleLogin from "@leecheuk/react-google-login";
 import LoginForm from "../components/form/LoginForm";
+
+import classes from "./Login.module.css";
+
+import wallpaper from "../images/syncee_frontend_test_wallpaper.png";
+import logo from "../images/syncee-logo-300px.png";
 
 
 
@@ -42,17 +47,22 @@ function Login(props){
     }*/
     
     return (
-        <div>
-        <div>This is a login page</div>
-        <h1>Login</h1>
-        <p>See your growth and get consulting support!</p>
-        <LoginGoogle />
-        <div id="signInDiv">
-       
-        </div>
-        <LoginForm /*onLogin={onLoginHandler}*//>
-        
-        </div>
+        <section className={classes.container}>
+            <div className={classes.left}>
+                <img className={classes.logo} src={logo} alt="logo" />
+                     <h1><b>Login</b></h1>
+                        <p>See your growth and get consulting support!</p>
+                        <LoginGoogle />
+                             <div className={classes.line}>
+                                or Sign in with email
+                            </div>
+                        <LoginForm /*onLogin={onLoginHandler}*//>
+             </div>
+             <div className={classes.right}>
+                <img className={classes.wall}/* src={wallpaper} alt="wallpaper"*/ />
+            
+             </div>
+        </section>
 
     );
 }

@@ -1,0 +1,70 @@
+*{
+    
+}
+.container *{
+    background-color:white;
+}
+
+
+.container{
+    padding: 5%;
+    display: flex;
+    background-color:inherit;
+    
+   
+    
+}
+
+.left{
+padding: 10%;
+width: 50%;
+justify-content: center;
+align-items: center;
+
+}
+
+.right{
+    width: 50%;
+    /*justify-content: center;
+    align-items: center;*/
+    overflow: hidden;
+    background-image: url(../images/syncee_frontend_test_wallpaper.png);
+    background-size: cover;
+
+   
+    
+}
+
+.logo{
+    width: 30%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.line{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    margin: 20px auto;
+    line-height: 1em;
+    text-align: center;
+    color: lightgray;
+}
+
+.line::before, .line::after {
+    content: "";
+    flex-grow: 1;
+    margin: 0px 4px;
+    background: linear-gradient(lightgrey, lightgrey);
+    background-size: 100% 2px;
+    background-position: 0% 50%;
+    background-repeat: repeat-x;
+
+
+}
+
+.wall{
+ /* height: 50%;
+  width: auto;*/
+  
+}

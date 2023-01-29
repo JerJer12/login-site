@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import { useNavigate , Link} from "react-router-dom";
 
+import classes from "./LoginForm.module.css";
+
 function LoginForm(props){
 
     const emailRef= useRef();
@@ -74,11 +76,11 @@ function LoginForm(props){
     }
 
     return (
-        <div>
-        <form onSubmit= {submitHandler}>
+        <div className={classes.form}>
+        <form  className={classes.form}  onSubmit= {submitHandler}>
             <div>
-                <label htmlFor="email">Email</label>
-                <input type="email"
+                <label htmlFor="email"><b>Email*</b></label>
+                <input className={classes.input} type="email"
                   required id="email"
                    ref={emailRef}
                     value={email}
@@ -86,8 +88,8 @@ function LoginForm(props){
                      placeholder="mail@website.com" ></input>
             </div>
             <div>
-                <label htmlFor="password">Password</label>
-                <input type="password"
+                <label htmlFor="password"><b>Password*</b></label>
+                <input className={classes.input} type="password"
                  required id="password"
                  ref={passwordRef} 
                  pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[?!*/@$%&]).{5,}'
@@ -95,12 +97,10 @@ function LoginForm(props){
                  onChange= {onHandleChangePass}/* {e=>setPassword(e.target.value)}*/
                  placeholder="Min. 5 character" ></input>
                  <p>{error}</p>
-                <p>*The password must be at least 5 character long and contain: lower and upper case letter a number an special characters</p>
             </div>
             <div>Placeholder for "remember me" and "forgot password"</div>
-            <div>password requirements</div>
             <div>
-            <input type="submit" value="Login" disabled={!properEmail} />
+            <input className={classes.btn} type="submit" value="Login" disabled={!properEmail} />
                 
             </div>
 
