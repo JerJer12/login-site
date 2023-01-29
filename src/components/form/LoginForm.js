@@ -12,6 +12,7 @@ function LoginForm(props){
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [properEmail, setProperEmail] = useState(false);
+    const [checked, setChecked] = useState(true);
 
     const navigate = useNavigate();
     //var properEmail = false;
@@ -31,6 +32,10 @@ function LoginForm(props){
 
     //props.onLogin(loginData);
     }
+
+    const handleCheck = () => {
+        setChecked(!checked);
+    };
 
 
     const eReg=  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -98,7 +103,11 @@ function LoginForm(props){
             </div>
             <div className={classes.helper}>
                 <div>
-                <input type="checkbox" checked="checked" id="checkbox"/>
+                <input type="checkbox"
+                 checked={checked}
+                 onChange={handleCheck}
+                  id="checkbox"
+                  />
                 <label htmlFor="checkbox" className={classes.checklabel}>
                 <b>Remember me</b>
                 </label>

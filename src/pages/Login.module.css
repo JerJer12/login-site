@@ -1,6 +1,8 @@
 *{
     
 }
+
+
 .container *{
     background-color:white;
 }
@@ -10,9 +12,6 @@
     padding: 5%;
     display: flex;
     background-color:inherit;
-    
-   
-    
 }
 
 .left{
@@ -34,9 +33,9 @@ align-items: center;
 }
 
 .logo{
-    width: 30%;
+    width: 8em;
     height: auto;
-    margin-bottom: 1em;
+    margin-bottom: 3em;
 }
 
 .line{
@@ -77,4 +76,13 @@ a{
  /* height: 50%;
   width: auto;*/
   
+}
+
+@media (max-width: 770px){
+    .right{
+        display: none;
+    }
+    .left{
+        width: 100%;
+    }
 }

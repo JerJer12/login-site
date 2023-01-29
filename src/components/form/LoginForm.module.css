@@ -53,3 +53,15 @@
 .checklabel{
     margin-left: 5px;
 }
+@media  (min-width: 770px) and (max-width: 979px){
+    .helper {
+    display: block;
+    
+    }
+}
+
+@media   (max-width: 400px){
+    .helper {
+    display: block;
+    }
+}
