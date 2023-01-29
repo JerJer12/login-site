@@ -73,8 +73,11 @@ function LoginForm(props){
         else if(!/[?!*/@$%&]/.test(value)){
             setError("Passwords must contain special characters");
         }
-        else {
+        else if(properEmail){
             setError("");
+        }
+        else{
+            setError("Invalid email format");
         }
     }
 

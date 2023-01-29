@@ -1,21 +1,17 @@
-import Login from "./Login";
-import LoginForm from "../components/form/LoginForm";
-import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+import classes from "./Info.module.css";
+
 function Info(props){
-    /*
-    const [isLoading, setLoading] = useState(false);
-    const [loadInfo, setLoadInfo] = useState([]);
-  */
+   
     const location = useLocation();
 
     return(
-        <div>
-            <p>info page</p>
+        <div className={classes.box}>
+            <h1 className={classes.h1}>Welcome to your page</h1>
             <div>
-                <p>Your email is: {location.state.email}</p>
-                <p>Your password is: {location.state.password}</p>
+                <p><b>Your email is: </b>{location.state.email}</p>
+                <p><b>Your password is: </b>{location.state.password}</p>
             </div>
 
         </div>

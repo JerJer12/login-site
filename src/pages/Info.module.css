@@ -1,0 +1,15 @@
+.box *{
+    background-color: white;
+}
+
+.h1{
+    margin-bottom: 3em;
+}
+
+.box {
+    text-align: center;
+    margin : 2em;
+    background-color: white;
+    padding-bottom: 4em;
+}
+

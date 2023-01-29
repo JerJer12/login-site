@@ -1,5 +1,5 @@
-
 import { useState, useEffect } from "react";
+import classes from "./Currency.module.css"
 
 
 function Currency(){
@@ -19,8 +19,8 @@ function Currency(){
 
 
     return (
-        <div>
-        <div>Currency page</div>
+        <div className={classes.box2}>
+        <h2>Currency Page</h2>
         {isLoading && <div>Loading...</div>}
         <ul>
             {data.data && data.data.map((obj, index) => (
