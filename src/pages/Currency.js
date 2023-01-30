@@ -17,7 +17,6 @@ function Currency(){
     }, []);
 
 
-
     return (
         <div className={classes.box2}>
         <h2>Currency Page</h2>

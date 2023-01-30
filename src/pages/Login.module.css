@@ -3,7 +3,6 @@
     background-color:white;
 }
 
-
 .container{
     padding: 5%;
     display: flex;
@@ -15,17 +14,13 @@ padding: 5% 10% 0% 10% ;
 width: 50%;
 justify-content: center;
 align-items: center;
-
 }
 
 .right{
     width: 50%;
-    /*justify-content: center;
-    align-items: center;*/
     overflow: hidden;
     background-image: url(../images/syncee_frontend_test_wallpaper.png);
     background-size: cover;
-    
 }
 
 .logo{
@@ -52,8 +47,6 @@ align-items: center;
     background-size: 100% 2px;
     background-position: 0% 50%;
     background-repeat: repeat-x;
-
-
 }
 
 .foot{
@@ -65,7 +58,6 @@ align-items: center;
 a{
     text-decoration: none;
     color: slateblue;
-    
 }
 
 

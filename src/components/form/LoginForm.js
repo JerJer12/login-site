@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { useNavigate , Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import classes from "./LoginForm.module.css";
 
@@ -15,7 +15,6 @@ function LoginForm(props){
     const [checked, setChecked] = useState(true);
 
     const navigate = useNavigate();
-    //var properEmail = false;
 
     function submitHandler(event){
         event.preventDefault();
@@ -29,8 +28,6 @@ function LoginForm(props){
     };
     navigate('/info',{
     state: loginData});
-
-    //props.onLogin(loginData);
     }
 
     const handleCheck = () => {
@@ -39,7 +36,7 @@ function LoginForm(props){
 
 
     const eReg=  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const eRegpass= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[?!*/@$%&]).{5,}'$/;
+    //const eRegpass= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[?!*/@$%&]).{5,}'$/;
 
     const onHandleChange =(e) => {
         const value = e.target.value;
@@ -90,7 +87,7 @@ function LoginForm(props){
                   required id="email"
                    ref={emailRef}
                     value={email}
-                     onChange= /*{e => setEmail(e.target.value)}*/{onHandleChange}
+                     onChange= {onHandleChange}
                      placeholder="mail@website.com" ></input>
             </div>
             <div>
@@ -100,7 +97,7 @@ function LoginForm(props){
                  ref={passwordRef} 
                  pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[?!*/@$%&]).{5,}'
                  value={password}
-                 onChange= {onHandleChangePass}/* {e=>setPassword(e.target.value)}*/
+                 onChange= {onHandleChangePass}
                  placeholder="Min. 5 character" ></input>
                  <p className={classes.error}> {error} </p>
             </div>
@@ -119,9 +116,7 @@ function LoginForm(props){
                 </div>
             <div>
             <input className={classes.btn} type="submit" value="Login" disabled={!properEmail} />
-                
             </div>
-
         </form>
         </div>
 

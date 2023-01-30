@@ -10,7 +10,6 @@ const onSuccess = (res) => {
 
 const onFailure =(res) => {
     console.log("Login failure");
-    //alert(res);
 }
 
 function LoginGoogle(){
@@ -26,11 +25,8 @@ function LoginGoogle(){
                 onFailure={onFailure}
                 isSingedIn={true}>
                 </GoogleLogin>
-
         </div>
     )
-
 }
-
 
 export default LoginGoogle;
